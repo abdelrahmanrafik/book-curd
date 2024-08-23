@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/bookmark.png" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmark</title>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-sm ">
+      <div class="container">
+          <div class="d-flex justify-content-start">
+              <h1 class="logo">Bookmarker</h1>
+              
+          </div>
+
+          <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-bars fa-xl"></i>
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../Quotes Quiz/index.html" dir="rtl">الأذكار اليومية</a></li>
+
+                  <li><a class="dropdown-item" id="back" >Home</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <div class="bookmark-content container m-auto ">
+      
+       <div class="d-flex justify-content-center align-items-center my-3">
+         <h2>
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+         </h2>
+       </div>
+
+       <div>
+
+        <label for="siteName" class="fw-bold"><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+        <input type="text" class="form-control my-3" id="siteName" placeholder="Bookmark Name" >
+
+        <label for="siteUrl" class="fw-bold"><i class="fa-solid fa-link"></i> Site URL</label>
+        <input type="email" class="form-control my-3 " id="siteUrl" placeholder="Website URL">
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-danger my-3 px-5" onclick="addBookmark()">
+                Submit
+            </button>
+            <button class="btn btn-delete my-3 px-5" onclick=" clearForm()">
+               clear
+           </button>
+        </div>
+       </div>
+
+       <div class="line"></div>
+
+       <div class="my-3">
+         <div class="d-flex justify-content-center align-items-baseline my-3 gap-3">
+
+         <p class="fw-bold">Bookmarked : <span id="count"></span></p>
+         <button class="btn btn-danger" type="button" onclick="reset()">Reset</button>
+            
+         </div>
+         <input type="text" oninput="searchBookmark(this.value)" placeholder="Search..." class="form-control my-4"  id="searchBookmark">
+          <table class="table table-striped text-center bg-light align-baseline">
+             <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+             </thead>
+             <tbody id="tBody" >
+              
+               
+               
+             </tbody>
+          </table>
+       </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
